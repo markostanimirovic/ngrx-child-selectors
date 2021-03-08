@@ -1,1 +1,1 @@
-export * from './lib/demo';
+export * from './lib/create-child-selectors';
