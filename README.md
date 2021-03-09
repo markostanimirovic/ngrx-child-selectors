@@ -3,7 +3,7 @@
 **Before:**
 
 ```ts
-export const selectUserState = createFeatureSelector<fromUser.State>('users');
+export const selectUserState = createFeatureSelector<fromUsers.State>('users');
 
 export const selectUsers = createSelector(
   selectUserState,
@@ -31,16 +31,16 @@ export const selectItemsPerPage = createSelector(
 **After:**
 
 ```ts
-export const selectUserState = createFeatureSelector<fromUser.State>('users');
+export const selectUserState = createFeatureSelector<fromUsers.State>('users');
 
 export const {
   selectUsers,
   selectLoading,
   selectPagination,
-} = createChildSelectors(selectUserState, fromUser.initialState);
+} = createChildSelectors(selectUserState, fromUsers.initialState);
 
 export const {
   selectCurrentPage,
   selectItemsPerPage,
-} = createChildSelectors(selectPagination, fromUser.initialState.pagination);
+} = createChildSelectors(selectPagination, ['currentPage', 'itemsPerPage']);
 ```

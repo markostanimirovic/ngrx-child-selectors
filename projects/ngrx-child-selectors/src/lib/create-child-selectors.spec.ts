@@ -32,20 +32,20 @@ const appStateMock: AppState = {
     loading: false,
     searchTerm: 'search',
     pagination: { currentPage: 1, itemsPerPage: 10 },
-  }
+  },
 };
 
 describe('createChildSelectors', () => {
   it('should create child selectors when selected keys are passed as second argument', () => {
     const selectMusiciansState: Selector<AppState, State> = state => state.musicians;
-    const {
-      selectLoading,
-      selectPagination,
-    } = createChildSelectors(selectMusiciansState, ['loading', 'pagination']);
-    const {
-      selectCurrentPage,
-      selectItemsPerPage,
-    } = createChildSelectors(selectPagination, ['currentPage', 'itemsPerPage']);
+    const { selectLoading, selectPagination } = createChildSelectors(selectMusiciansState, [
+      'loading',
+      'pagination',
+    ]);
+    const { selectCurrentPage, selectItemsPerPage } = createChildSelectors(selectPagination, [
+      'currentPage',
+      'itemsPerPage',
+    ]);
 
     expect(selectLoading(appStateMock)).toBe(appStateMock.musicians.loading);
     expect(selectPagination(appStateMock)).toBe(appStateMock.musicians.pagination);
@@ -61,10 +61,10 @@ describe('createChildSelectors', () => {
       selectSearchTerm,
       selectPagination,
     } = createChildSelectors(selectMusiciansState, appStateMock.musicians);
-    const {
-      selectCurrentPage,
-      selectItemsPerPage,
-    } = createChildSelectors(selectPagination, appStateMock.musicians.pagination);
+    const { selectCurrentPage, selectItemsPerPage } = createChildSelectors(
+      selectPagination,
+      appStateMock.musicians.pagination,
+    );
 
     expect(selectEntities(appStateMock)).toBe(appStateMock.musicians.entities);
     expect(selectLoading(appStateMock)).toBe(appStateMock.musicians.loading);

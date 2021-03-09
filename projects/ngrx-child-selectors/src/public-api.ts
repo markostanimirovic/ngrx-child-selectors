@@ -1,1 +1,1 @@
-export * from './lib/create-child-selectors';
+export { createChildSelectors, ChildSelectors } from './lib/create-child-selectors';
