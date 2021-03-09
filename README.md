@@ -1,5 +1,11 @@
 # NgRx Child Selectors
 
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![Build Status](https://travis-ci.org/markostanimirovic/ngrx-child-selectors.svg?branch=master)](https://travis-ci.org/markostanimirovic/ngrx-child-selectors)
+[![Coverage Status](https://coveralls.io/repos/github/markostanimirovic/ngrx-child-selectors/badge.svg?branch=master)](https://coveralls.io/github/markostanimirovic/ngrx-child-selectors)
+
+**NgRx Plugin for Easy Creation of Child Selectors**
+
 **Before:**
 
 ```ts

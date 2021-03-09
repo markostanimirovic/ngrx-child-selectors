@@ -7,5 +7,22 @@
   },
   "dependencies": {
     "tslib": "^2.0.0"
+  },
+  "author": "Marko Stanimirović",
+  "description": "NgRx Plugin for Easy Creation of Child Selectors",
+  "keywords": [
+    "Angular",
+    "NgRx",
+    "selectors",
+    "createSelector"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/markostanimirovic/ngrx-child-selectors#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markostanimirovic/ngrx-child-selectors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/markostanimirovic/ngrx-child-selectors/issues"
   }
 }

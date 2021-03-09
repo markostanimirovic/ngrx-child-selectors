@@ -36,7 +36,7 @@ const appStateMock: AppState = {
 };
 
 describe('createChildSelectors', () => {
-  it('should create child selectors when selected keys are passed as second argument', () => {
+  it('should create child selectors when the selected keys are passed as a second argument', () => {
     const selectMusiciansState: Selector<AppState, State> = state => state.musicians;
     const { selectLoading, selectPagination } = createChildSelectors(selectMusiciansState, [
       'loading',
@@ -53,7 +53,7 @@ describe('createChildSelectors', () => {
     expect(selectItemsPerPage(appStateMock)).toBe(appStateMock.musicians.pagination.itemsPerPage);
   });
 
-  it('should create child selectors when object with selected keys is passed as second argument', () => {
+  it('should create child selectors when the object with the selected keys is passed as a second argument', () => {
     const selectMusiciansState = createFeatureSelector<State>('musicians');
     const {
       selectEntities,
