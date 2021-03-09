@@ -1,38 +1,45 @@
 import { capitalize } from './helpers';
 import { createSelector, MemoizedSelector, Selector } from '@ngrx/store';
 
-type RecordKeys<Rec extends Record<string, unknown>> = Array<keyof Rec & string>;
+type RecordKeys<R extends Record<string, unknown>> = Array<keyof R & string>;
+
+type ExtractState<S> = S extends Selector<infer State, unknown> ? State : never;
+
+type ExtractResult<S> = S extends Selector<unknown, infer Result> ? Result : never;
 
 type ChildSelectors<
-  State extends Record<string, unknown>,
-  SelectedKeys extends RecordKeys<State>
+  State extends object,
+  Result extends Record<string, unknown>,
+  SelectedKeys extends RecordKeys<Result>
 > = {
   [Key in SelectedKeys[number] & string as `select${Capitalize<Key>}`]: MemoizedSelector<
     State,
-    State[Key]
+    Result[Key]
   >;
 };
 
 export function createChildSelectors<
-  State extends Record<string, any>,
-  SelectedKeys extends RecordKeys<State>
+  State extends object,
+  Result extends Record<string, any>,
+  SelectedKeys extends RecordKeys<Result>
 >(
-  parentSelector: Selector<any, State>,
+  parentSelector: Selector<State, Result>,
   selectedKeys: SelectedKeys,
-): ChildSelectors<State, SelectedKeys>;
+): ChildSelectors<State, Result, SelectedKeys>;
 
-export function createChildSelectors<State extends Record<string, any>>(
-  parentSelector: Selector<any, State>,
-  objectWithSelectedKeys: State,
-): ChildSelectors<State, RecordKeys<State>>;
+export function createChildSelectors<State extends object, Result extends Record<string, any>>(
+  parentSelector: Selector<any, Result>,
+  objectWithSelectedKeys: Result,
+): ChildSelectors<State, Result, RecordKeys<Result>>;
 
 export function createChildSelectors<
-  State extends Record<string, any>,
-  SelectedKeys extends RecordKeys<State>
+  State extends object,
+  Result extends Record<string, any>,
+  SelectedKeys extends RecordKeys<Result>
 >(
-  parentSelector: Selector<any, State>,
-  selectedKeysOrObject: SelectedKeys | State,
-): ChildSelectors<State, SelectedKeys> {
+  parentSelector: Selector<any, Result>,
+  selectedKeysOrObject: SelectedKeys | Result,
+): ChildSelectors<State, Result, SelectedKeys> {
   const childKeys = Array.isArray(selectedKeysOrObject)
     ? selectedKeysOrObject as string[]
     : Object.keys(selectedKeysOrObject) as string[];
@@ -45,6 +52,6 @@ export function createChildSelectors<
         parentState => parentState[childKey],
       ),
     }),
-    {} as ChildSelectors<State, SelectedKeys>,
+    {} as ChildSelectors<State, Result, SelectedKeys>,
   );
 }
