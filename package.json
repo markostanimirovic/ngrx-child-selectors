@@ -1,11 +1,9 @@
 {
-  "name": "ngrx-child-selectors",
-  "version": "0.0.1",
   "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build ngrx-child-selectors --prod && cp README.md ./dist/ngrx-child-selectors",
     "lint": "npm run prettier && npm run eslint",
     "lint:fix": "npm run prettier:fix && npm run eslint:fix",
     "prettier": "prettier --check . --ignore-path .lintignore",
