@@ -11,7 +11,8 @@
     "eslint": "eslint . --ext .js,.ts --ignore-path .lintignore",
     "eslint:fix": "eslint . --ext .js,.ts --ignore-path .lintignore --fix",
     "test": "jest",
-    "test:coveralls": "jest && coveralls < coverage/lcov.info"
+    "test:coveralls": "jest && coveralls < coverage/lcov.info",
+    "publish": "npm run build && cd ./dist/ngrx-child-selectors && npm publish"
   },
   "husky": {
     "hooks": {
