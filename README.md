@@ -1,4 +1,4 @@
-# NgRx Child Selectors
+# 🏭 NgRx Child Selectors
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![Build Status](https://travis-ci.org/markostanimirovic/ngrx-child-selectors.svg?branch=master)](https://travis-ci.org/markostanimirovic/ngrx-child-selectors)
@@ -6,7 +6,36 @@
 
 **NgRx Plugin for Easy Creation of Child Selectors**
 
-**Before:**
+## Contents
+
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Demo](#demo)
+- [Comparison with `createSelector`](#comparison-with-createselector)
+
+## Installation
+
+NPM: `npm install ngrx-child-selectors`
+
+Yarn: `yarn add ngrx-child-selectors`
+
+> **Note:** NgRx Child Selectors lib requires TypeScript 4.1 or higher. 
+
+## Getting Started
+
+**UNDER_CONSTRUCTION**
+
+## Demo
+
+**UNDER_CONSTRUCTION**
+
+## Comparison with `createSelector`
+
+**UNDER_CONSTRUCTION**
+
+The same selectors created using `createSelector` vs `createChildSelectors`.
+
+### Using `createSelector`:
 
 ```ts
 export const selectUserState = createFeatureSelector<fromUsers.State>('users');
@@ -34,7 +63,7 @@ export const selectItemsPerPage = createSelector(
 );
 ```
 
-**After:**
+### Using `createChildSelectors`:
 
 ```ts
 export const selectUserState = createFeatureSelector<fromUsers.State>('users');
