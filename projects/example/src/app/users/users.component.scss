@@ -1,15 +1,38 @@
-ul {
+$dark-purple: rebeccapurple;
+$light-purple: mediumpurple;
+$purple-border: 2px solid $dark-purple;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 20rem;
+  margin: auto;
+  text-align: center;
+}
+
+.search-input {
+  padding: 0.5rem;
+  border: $purple-border;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.user-list {
   list-style: none;
   padding: 0;
-}
 
-li {
-  cursor: pointer;
-  border: 1px solid rebeccapurple;
-  padding: 0.5rem;
-  margin-bottom: 0.25rem;
-}
+  &__item {
+    cursor: pointer;
+    border: $purple-border;
+    padding: 0.5rem;
+    margin-bottom: 0.25rem;
 
-li.selected {
-  background: mediumpurple;
+    &--selected {
+      color: white;
+      background: $light-purple;
+    }
+  }
 }
