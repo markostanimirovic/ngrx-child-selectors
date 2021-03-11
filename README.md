@@ -20,12 +20,12 @@ NPM: `npm install ngrx-child-selectors`
 
 Yarn: `yarn add ngrx-child-selectors`
 
-> **Note:** NgRx Child Selectors library requires TypeScript 4.1 or higher. 
+> ⚠️ NgRx Child Selectors library requires TypeScript 4.1 or higher. 
 
 ## Usage
 
-NgRx Child Selectors plugin provides `createChildSelectors` function that is used to create memoized
-and strongly typed child selectors based on the parent selector. It accepts the parent selector as the first,
+NgRx Child Selectors plugin provides `createChildSelectors` function that is used to create **memoized and
+strongly typed** child selectors based on the parent selector. It accepts the parent selector as the first,
 and the object that has the same type as the return value of the parent selector as the second argument:
 
 ```ts
@@ -55,7 +55,7 @@ export const {
 } = createChildSelectors(selectPagination, initialState.pagination);
 ```
 
-> **Tip:** Use the initial state as the second argument when the parent selector is a feature selector.
+> 💡 Use the initial state as the second argument when the parent selector is a feature selector.
 
 Also, there is another signature of `createChildSelectors` function. It accepts the array of the parent state
 keys as the second argument and creates selectors for the passed keys:
