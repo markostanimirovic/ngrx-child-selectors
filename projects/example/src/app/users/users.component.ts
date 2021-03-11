@@ -1,8 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { selectUsersPageViewModel } from './users.selectors';
 import * as UsersPageActions from './users.actions';
 
@@ -11,26 +8,21 @@ import * as UsersPageActions from './users.actions';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
 })
-export class UsersComponent implements OnInit, OnDestroy {
-  private readonly destroy = new Subject();
-  readonly searchControl = new FormControl('');
+export class UsersComponent implements OnInit {
   readonly vm$ = this.store.select(selectUsersPageViewModel);
 
   constructor(private readonly store: Store) {}
 
   ngOnInit(): void {
     this.store.dispatch(UsersPageActions.enter());
-
-    this.searchControl.valueChanges
-      .pipe(takeUntil(this.destroy))
-      .subscribe(searchTerm => this.store.dispatch(UsersPageActions.searchUsers({ searchTerm })));
   }
 
   onSelectUser(user: string): void {
     this.store.dispatch(UsersPageActions.selectUser({ user }));
   }
 
-  ngOnDestroy(): void {
-    this.destroy.next();
+  onSearchUsers({ target }: Event): void {
+    const searchTerm = (target as HTMLInputElement).value;
+    this.store.dispatch(UsersPageActions.searchUsers({ searchTerm }));
   }
 }

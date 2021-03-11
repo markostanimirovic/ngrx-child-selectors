@@ -1,6 +1,6 @@
 <ng-container *ngIf="vm$ | async as vm">
   <h2>Users ({{ vm.filteredUsers.length }})</h2>
-  <input class="search-input" type="text" [formControl]="searchControl" placeholder="Search..." />
+  <input type="text" class="search-input" placeholder="Search..." (input)="onSearchUsers($event)" />
   <ul class="user-list">
     <li
       *ngFor="let user of vm.filteredUsers"
