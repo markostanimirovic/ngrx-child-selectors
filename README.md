@@ -11,7 +11,7 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Demo](#demo)
+- [Example](#example)
 - [Comparison with `createSelector`](#comparison-with-createselector)
 
 ## Installation
@@ -67,9 +67,10 @@ const {
 } = createChildSelectors(selectUserState, ['users', 'loading']);
 ```
 
-## Demo
+## Example
 
-**UNDER_CONSTRUCTION**
+See the example project
+[here](https://github.com/markostanimirovic/ngrx-child-selectors/tree/master/projects/example).
 
 ## Comparison with `createSelector`
 
