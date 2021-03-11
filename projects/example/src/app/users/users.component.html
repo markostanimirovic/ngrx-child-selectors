@@ -1,5 +1,8 @@
 <ng-container *ngIf="vm$ | async as vm">
-  <h2>Users ({{ vm.filteredUsers.length }})</h2>
+  <div class="header">
+    <img src="assets/ngrx-logo.svg" height="50" />
+    <h2>Users ({{ vm.filteredUsers.length }})</h2>
+  </div>
   <input type="text" class="search-input" placeholder="Search..." (input)="onSearchUsers($event)" />
   <ul class="user-list">
     <li

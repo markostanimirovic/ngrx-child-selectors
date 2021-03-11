@@ -11,6 +11,17 @@ $purple-border: 2px solid $dark-purple;
   text-align: center;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  > img {
+    height: 3rem;
+  }
+}
+
 .search-input {
   padding: 0.5rem;
   border: $purple-border;
