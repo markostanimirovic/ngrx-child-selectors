@@ -1,0 +1,15 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+  border: 1px solid rebeccapurple;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+li.selected {
+  background: mediumpurple;
+}

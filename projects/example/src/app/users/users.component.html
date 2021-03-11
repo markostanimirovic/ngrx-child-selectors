@@ -1,0 +1,13 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <h2>Users</h2>
+  <input type="text" [formControl]="searchControl" placeholder="Search..." />
+  <ul>
+    <li
+      *ngFor="let user of vm.filteredUsers"
+      [class.selected]="user === vm.selectedUser"
+      (click)="onSelectUser(user)"
+    >
+      {{ user }}
+    </li>
+  </ul>
+</ng-container>
