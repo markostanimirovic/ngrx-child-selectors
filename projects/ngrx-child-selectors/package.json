@@ -1,6 +1,6 @@
 {
   "name": "ngrx-child-selectors",
-  "version": "11.0.0-beta.0",
+  "version": "11.0.0-rc.0",
   "peerDependencies": {
     "@ngrx/store": "^11.0.0",
     "typescript": "^4.1.0"
