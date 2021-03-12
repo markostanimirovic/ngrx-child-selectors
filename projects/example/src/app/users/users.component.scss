@@ -25,6 +25,7 @@ $purple-border: 2px solid $dark-purple;
 .search-input {
   padding: 0.5rem;
   border: $purple-border;
+  font-size: 1rem;
 
   &:focus {
     outline: none;
