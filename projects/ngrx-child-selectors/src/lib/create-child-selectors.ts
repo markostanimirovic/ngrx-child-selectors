@@ -8,7 +8,7 @@ export type ChildSelectors<
   ParentState extends Record<string, unknown>,
   SelectedKeys extends RecordKeys<ParentState>
 > = {
-  [Key in SelectedKeys[number] & string as `select${Capitalize<Key>}`]: MemoizedSelector<
+  [Key in SelectedKeys[number] as `select${Capitalize<Key>}`]: MemoizedSelector<
     AppState,
     ParentState[Key]
   >;
