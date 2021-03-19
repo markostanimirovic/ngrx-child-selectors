@@ -29,6 +29,8 @@ strongly typed** child selectors based on the parent selector. It accepts the pa
 and the object that has the same type as the return value of the parent selector as the second argument:
 
 ```ts
+import { createChildSelectors } from 'ngrx-child-selectors';
+
 export interface State {
   users: User[];
   loading: boolean;
@@ -107,6 +109,8 @@ export const selectItemsPerPage = createSelector(
 ### `createChildSelectors`
 
 ```ts
+import { createChildSelectors } from 'ngrx-child-selectors';
+
 export const selectUserState = createFeatureSelector<State>('users');
 
 export const {
