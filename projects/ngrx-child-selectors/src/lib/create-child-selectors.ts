@@ -1,5 +1,6 @@
 import { capitalize } from './helpers';
-import { createSelector, MemoizedSelector, Selector } from '@ngrx/store';
+import { MemoizedSelector, Selector } from '@ngrx/store';
+import { createChildSelector } from './create-child-selector';
 
 type RecordKeys<R extends Record<string, unknown>> = Array<keyof R & string>;
 
@@ -46,10 +47,7 @@ export function createChildSelectors<
   return selectedKeys.reduce(
     (childSelectors, selectedKey) => ({
       ...childSelectors,
-      [`select${capitalize(selectedKey)}`]: createSelector(
-        parentSelector,
-        parentState => parentState[selectedKey],
-      ),
+      [`select${capitalize(selectedKey)}`]: createChildSelector(parentSelector, selectedKey),
     }),
     {} as ChildSelectors<AppState, ParentState, SelectedKeys>,
   );
