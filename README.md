@@ -24,6 +24,8 @@ Yarn: `yarn add ngrx-child-selectors`
 
 ## Usage
 
+### `createChildSelectors`
+
 NgRx Child Selectors plugin provides `createChildSelectors` function that is used to create **memoized and
 strongly typed** child selectors based on the parent selector. It accepts the parent selector as the first,
 and the object that has the same type as the return value of the parent selector as the second argument:
@@ -63,10 +65,18 @@ Also, there is another signature of `createChildSelectors` function. It accepts 
 keys as the second argument and creates selectors for the passed keys:
 
 ```ts
-const {
+export const {
   selectUsers,
   selectLoading,
 } = createChildSelectors(selectUserState, ['users', 'loading']);
+```
+
+### `createChildSelector`
+
+NgRx Child Selectors plugin also provides `createChildSelector` function that is used to create a single child selector:
+
+```ts
+export const selectLoading = createChildSelector(selectUserState, 'loading');
 ```
 
 ## Example
