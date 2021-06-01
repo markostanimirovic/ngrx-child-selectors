@@ -3,7 +3,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build ngrx-child-selectors --prod && cp README.md ./dist/ngrx-child-selectors",
+    "build": "ng build ngrx-child-selectors --configuration production && cp README.md ./dist/ngrx-child-selectors",
     "lint": "npm run prettier && npm run eslint",
     "lint:fix": "npm run prettier:fix && npm run eslint:fix",
     "prettier": "prettier --check . --ignore-path .lintignore",
@@ -34,7 +34,7 @@
     "@angular/router": "~12.0.2",
     "@ngrx/store": "^12.0.0",
     "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
+    "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
