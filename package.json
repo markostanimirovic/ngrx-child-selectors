@@ -24,23 +24,23 @@
     "*.{js,ts}": "eslint --fix"
   },
   "dependencies": {
-    "@angular/animations": "~11.2.4",
-    "@angular/common": "~11.2.4",
-    "@angular/compiler": "~11.2.4",
-    "@angular/core": "~11.2.4",
-    "@angular/forms": "~11.2.4",
-    "@angular/platform-browser": "~11.2.4",
-    "@angular/platform-browser-dynamic": "~11.2.4",
-    "@angular/router": "~11.2.4",
-    "@ngrx/store": "^11.0.1",
+    "@angular/animations": "~12.0.2",
+    "@angular/common": "~12.0.2",
+    "@angular/compiler": "~12.0.2",
+    "@angular/core": "~12.0.2",
+    "@angular/forms": "~12.0.2",
+    "@angular/platform-browser": "~12.0.2",
+    "@angular/platform-browser-dynamic": "~12.0.2",
+    "@angular/router": "~12.0.2",
+    "@ngrx/store": "^12.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.3"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1102.3",
-    "@angular/cli": "~11.2.3",
-    "@angular/compiler-cli": "~11.2.4",
+    "@angular-devkit/build-angular": "~12.0.2",
+    "@angular/cli": "~12.0.2",
+    "@angular/compiler-cli": "~12.0.2",
     "@types/jest": "^26.0.20",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
@@ -50,10 +50,10 @@
     "husky": "^4.3.8",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
-    "ng-packagr": "^11.0.0",
+    "ng-packagr": "^12.0.2",
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.3",
     "ts-node": "^9.1.1",
-    "typescript": "~4.1.5"
+    "typescript": "~4.2.4"
   }
 }
